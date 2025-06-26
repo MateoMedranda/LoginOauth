@@ -3,7 +3,10 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-mongoose.connect("")
+const username = process.env.MONGO_USER;
+const password = process.env.MONGO_PASSWORD;
+
+mongoose.connect(`mongodb+srv://${username}:${password}@biosigma.jffjx5o.mongodb.net/Biosigma?retryWrites=true&w=majority&appName=Biosigma`);
 
 const db = mongoose.connection;
 
