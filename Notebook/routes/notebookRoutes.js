@@ -17,7 +17,7 @@ router.get('/notebooks/:id', async (req,res) =>{
 
 router.get("/notebooks/", async (req,res) => {
     try{
-        const notebooks = await Notebook.find();
+        const notebooks = await notebook.find();
         res.json(notebooks);
     } catch (err){
         res.status(500).json({message: err,message});
